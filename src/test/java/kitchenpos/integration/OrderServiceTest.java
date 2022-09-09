@@ -260,7 +260,7 @@ class OrderServiceTest {
         order.setStatus(orderStatus);
         orderRepository.save(order);
 
-        // when
+        // when + then
         assertThatThrownBy(() -> orderService.complete(order.getId()))
                 .isInstanceOf(IllegalStateException.class);
     }
@@ -277,7 +277,7 @@ class OrderServiceTest {
         order.setStatus(orderStatus);
         orderRepository.save(order);
 
-        // when
+        // when + then
         assertThatThrownBy(() -> orderService.complete(order.getId()))
                 .isInstanceOf(IllegalStateException.class);
     }

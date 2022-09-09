@@ -11,6 +11,6 @@ public class FakeProfanityChecker implements ProfanityChecker {
     @Override
     public boolean containsProfanity(String text) {
         return PROFANE_WORDS.stream()
-                .anyMatch(it -> it.contains(text));
+                .anyMatch(text::contains);
     }
 }

@@ -12,7 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.NullSource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
@@ -57,7 +57,7 @@ class ProductServiceTest {
     }
 
     @ParameterizedTest(name = "상품의 이름은 빈 값을 허용하지 않는다. source = {0}")
-    @NullSource
+    @NullAndEmptySource
     void create_EmptyName(String source) {
         // given
         Product request = aProduct(source, 10_000);

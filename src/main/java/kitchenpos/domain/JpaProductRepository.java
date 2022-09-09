@@ -6,6 +6,4 @@ import java.util.List;
 import java.util.UUID;
 
 public interface JpaProductRepository extends JpaRepository<Product, UUID>, ProductRepository {
-    @Override
-    List<Product> findAllByIdIn(List<UUID> ids);
 }
